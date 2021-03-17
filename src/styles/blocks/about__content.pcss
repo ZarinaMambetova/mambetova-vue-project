@@ -1,11 +1,28 @@
 .about__content {
-  width: 35%;
+  width: 45%;
   margin-top: 20px;
+  padding-left: 150px;
 }
 
-.about__desc, .about__text-info, .about__ps {
+.about__desc,
+.about__text-info,
+.about__ps {
   opacity: 0.5;
   margin-bottom: 20px;
+}
+.about__ps {
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    background: url('~images/content/star.png') center center no-repeat;
+    width: 23px;
+    height: 23px;
+    transition: .3s;
+    position: absolute;
+    left: -52px;
+  }
 }
 
 .about__title {

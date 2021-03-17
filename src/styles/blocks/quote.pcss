@@ -1,0 +1,21 @@
+.quote {
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    width: 18%;
+    height: 37%;
+    opacity: .05;
+    background: svg-load('quote.svg', fill=#fff) center center / contain no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.quote__text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 30px;
+}

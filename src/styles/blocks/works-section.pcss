@@ -4,22 +4,22 @@
 
 .works {
   color: #222427;
+  padding: 100px 0;
 }
 
 .section-title {
   font-weight: bold;
   font-size: 36px;
-  margin-bottom: 83px;
 }
 
 .tags {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 49px;
 }
 
 .works-preview__info {
   width: 35%;
+  padding-left: 50px;
 }
 
 .tags__item {
@@ -28,11 +28,18 @@
   padding: 14px 22px;
   font-weight: 600;
   font-size: 15px;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .works-preview__title {
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: 30px;
+}
+.works__title {
   margin-bottom: 30px;
 }
 
@@ -51,11 +58,15 @@
 
   &:before {
     content: "";
-    background: svg-load('link.svg') center center no-repeat;
+    background: svg-load('link.svg', fill=#586ed3, width=100%, height=100%) center center no-repeat;
+
     display: block;
     height: 15px;
     width: 15px;
     margin-right: 20px;
-    fill: #586ed3;
+  }
+  &:hover {
+    text-decoration: underline;
+    transition: 0.3s;
   }
 }

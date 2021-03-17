@@ -20,7 +20,7 @@
     font-size: 400px;
     font-weight: 800;
     margin-left: -8%;
-    color: rgba($text-color, .05);
+    color: #e6e6e6;
   }
 }
 
@@ -50,17 +50,19 @@
 .works-slider__thumbs {
   position: absolute;
   right: 0;
-  bottom: 0;
-  width: 723px;
+  bottom: 59px;
+  width: 717px;
   display: flex;
 }
 
 .works-slider__thumb-item {
   height: 100px;
-  transition: .2s;
+  transition: .1s;
+  outline: 3px solid transparent;
   &.active,
   &:hover {
     outline: 3px solid #f29400;
+    outline-offset: -3px;
   }
 }
 
@@ -72,8 +74,8 @@
 
 .works-slider__buttons {
   position: absolute;
-  top: 79%;
-  right: -53px;
+  bottom: 59px;
+  right: -50px;
 }
 
 .works-slider__btn {
@@ -86,12 +88,12 @@
     content: "";
     background: svg-load('arrow-down.svg', fill=#fff, width=100%, height=100%) center center no-repeat;
     display: block;
-    width: 8px;
-    height: 10px;
+    width: 21px;
+    height: 23px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-90deg);
+    transform: translate(-50%, -50%);
     transition: opacity .3s, margin-top .3s;
     opacity: .3;
   }
@@ -102,7 +104,7 @@
   }
   &_prev {
     &:before {
-      transform: translate(-50%, -50%) rotate(-270deg);
+      transform: translate(-50%, -50%) rotate(-180deg);
     }
     &:active {
       &:before {
