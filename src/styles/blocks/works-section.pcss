@@ -4,7 +4,9 @@
 
 .works {
   color: #222427;
-  padding: 100px 0;
+  @include tablets {
+    padding: 150px 0;
+  }
 }
 
 .section-title {
@@ -15,11 +17,20 @@
 .tags {
   display: flex;
   margin-bottom: 49px;
+  justify-content: center;
 }
 
 .works-preview__info {
   width: 35%;
   padding-left: 50px;
+  z-index: 100;
+  @media screen and (max-width: 940px) {
+    width: 90%;
+    padding-top: 50px;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 0;
+  }
 }
 
 .tags__item {
@@ -48,6 +59,10 @@
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 46px;
+  @media screen and (max-width: 940px) {
+    margin: 0 auto;
+    max-width: 572px;
+  }
 }
 .iconed-link {
   color: #586ed3;

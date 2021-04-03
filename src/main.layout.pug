@@ -1,12 +1,14 @@
 include ./mixins.pug
 
-doctype html 
+doctype html
 html(lang="ru")
-  head 
+  head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Portfolio | main 
-  body 
-    .wrapper 
-      .maincontent 
-       block content
+    title Portfolio | main page
+  body
+    .wrapper
+      .maincontent
+        block content
+    
+    include ./templates/entry.pug

@@ -1,6 +1,17 @@
+.about {
+  padding-top: 160px;
+}
+
 .about__container {
-  margin-top: 160px;
+  width: 95%;
+  max-width: 1000px;
   display: flex;
   justify-content: center;
-
+  @include tablets {
+    justify-content: flex-start;
+  }
+  @media screen and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }

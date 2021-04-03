@@ -1,20 +1,33 @@
 .values {
   color: #222427;
-  &:before {
-    content: "";
-    position: absolute;
-    background: url('~images/content/bg/guitar.png') left bottom / contain no-repeat;
-    display: block;
-    top: -58%;
-    height: 100%;
-    width: 33%;
-    left: 0;
-  }
 }
 
 .values__container {
   position: relative;
   padding: 130px 0;
+  &:before {
+    content: "";
+    position: absolute;
+    background: url('~images/content/bg/guitar.png') left bottom no-repeat;
+    display: block;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    left: -11%;
+  }
+  @include tablets {
+    &:before {
+      content: "";
+      position: absolute;
+      background: url('~images/content/bg/gitare2.png') left bottom / contain no-repeat;
+      display: block;
+      top: 95%;
+      height: 36%;
+      width: 90%;
+      transform: translate(-50%, -50%);
+      left: 50%;
+    }
+  }
 }
 
 .values__title {
@@ -23,8 +36,10 @@
 }
 
 .values__title-container {
-  width: 40%;
-  margin-left: 70px;
+  max-width: 500px;
+  @include tablets {
+    text-align: center;
+  }
 }
 .values__text {
   font-weight: bold;
