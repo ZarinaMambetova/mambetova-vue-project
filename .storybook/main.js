@@ -1,23 +1,23 @@
-const custom = require("../webpack.config.js")(null, "development");
-const path = require("path");
+const custom = require('../webpack.config.js')(null, 'development');
+const path = require('path');
 
 module.exports = {
-  stories: ["../src/admin/**/*.stories.js"],
+  stories: [ '../src/admin/**/*.stories.js' ],
   addons: [
-    "@storybook/addon-actions",
-    "@storybook/addon-links",
-    "@storybook/addon-backgrounds/register",
-    "storybook-dark-mode/register",
-    "@storybook/addon-knobs/register",
+    '@storybook/addon-actions', //отлавливает методы
+    '@storybook/addon-links',
+    '@storybook/addon-backgrounds/register',
+    'storybook-dark-mode/register',
+    '@storybook/addon-knobs/register',
     {
-      name: "@storybook/addon-storysource",
+      name: '@storybook/addon-storysource',
       options: {
         rule: {
-          test: [/\.stories\.jsx?$/],
-          include: [path.resolve(__dirname, "../src/admin/components")],
-        },
-      },
-    },
+          test: [ /\.stories\.jsx?$/ ],
+          include: [ path.resolve(__dirname, '../src/admin/components') ]
+        }
+      }
+    }
   ],
   webpackFinal: (config) => {
     const rules = [
@@ -26,23 +26,23 @@ module.exports = {
         test: /\.stories\.jsx?$/,
         loaders: [
           {
-            loader: require.resolve("@storybook/source-loader"),
+            loader: require.resolve('@storybook/source-loader'),
             options: {
               prettierConfig: {
                 printWidth: 100,
-                singleQuote: false,
-              },
-            },
-          },
+                singleQuote: false
+              }
+            }
+          }
         ],
-        enforce: "pre",
-      },
+        enforce: 'pre'
+      }
     ];
 
     return {
       ...config,
       module: { ...config.module, rules },
-      resolve: custom.resolve,
+      resolve: custom.resolve
     };
-  },
+  }
 };

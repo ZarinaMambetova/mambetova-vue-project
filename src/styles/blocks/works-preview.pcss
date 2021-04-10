@@ -12,10 +12,9 @@
   }
 }
 .works-slider__pics {
-  width: 58%;
+  width: 100%;
   position: relative;
   z-index: 10;
-  height: 467px;
 
   &:before {
     content: attr(data-slide);
@@ -42,11 +41,13 @@
 
 .works-slider__pics-content {
   z-index: 10;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
+  position: relative;
+
+  width: 96%;
   height: 100%;
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 .works-slider__fullpic-container {
@@ -56,14 +57,22 @@
   width: 100%;
   height: 100%;
 }
+.works-slider__preview {
+  position: relative;
+  padding-top: 60.25%; /* 16:9 Aspect Ratio */
+}
 
-.works-slider__fullpic {
+.works-slider__preview img {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+}
+.works-slider__fullpic {
   object-fit: cover;
-  @media screen and (max-width: 480px) {
-    object-fit: contain;
-  }
+  max-width: unset;
+  max-height: unset;
 }
 
 .works-slider__thumbs {
@@ -71,17 +80,14 @@
   right: 0;
   bottom: 59px;
   display: flex;
-  width: 80%;
+
   @media screen and (max-width: 480px) {
     display: none;
   }
 }
 
 .works-slider__thumb-item {
-  height: 100px;
   transition: .1s;
-}
-.works-slider__thumb {
   outline: 3px solid transparent;
   &.active,
   &:hover {
@@ -89,7 +95,30 @@
     outline-offset: -3px;
   }
 }
+
+.works-slider__thumb-link {
+  padding: 0;
+}
+.works-slider__thumb-img {
+  position: relative;
+  height: 148px;
+  width: 276px;
+  @media screen and (max-width: 1310px) {
+    width: 200px;
+  }
+  @media screen and (max-width: 1010px) {
+    width: 150px;
+    height: 100px;
+  }
+  @media screen and (max-width: 580px) {
+    width: 120px;
+    height: 80px;
+  }
+}
 .works-slider__thumb {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -97,17 +126,26 @@
 
 .works-slider__buttons {
   position: absolute;
-  bottom: 59px;
-  right: -50px;
+  right: -71px;
+  z-index: 10000;
+  bottom: 61px;
+
+  @media screen and (max-width: 1010px) {
+    right: -45px;
+    bottom: 4.0rem;
+  }
+  @media screen and (max-width: 580px) {
+    right: -35px;
+    bottom: 4.0rem;
+  }
   @media screen and (max-width: 480px) {
     right: 0;
-    bottom: 7.25rem;
   }
 }
 
 .works-slider__btn {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 77px;
   background: #2d3c4e;
   display: block;
   position: relative;
@@ -145,5 +183,13 @@
         margin-top: -3px;
       }
     }
+  }
+  @media screen and (max-width: 1010px) {
+    height: 50px;
+    width: 50px;
+  }
+  @media screen and (max-width: 580px) {
+    height: 40px;
+    width: 40px;
   }
 }

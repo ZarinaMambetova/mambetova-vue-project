@@ -2,6 +2,7 @@ script(type="text/template")#preview-container
   .works-slider
     display(
       :currentWork="currentWork",
+      :currentIndex="currentIndex",
       :works="works",
       @slide="slide"
     )
@@ -12,7 +13,8 @@ script(type="text/template")#preview-container
 script(type="text/template")#preview-display
   .works-slider__pics(:data-slide="currentIndex + 1")
     .works-slider__pics-content
-      img(:src="currentWork.photo", alt="").works-slider__fullpic
+      .works-slider__preview
+        img(:src="currentWork.photo", alt="").works-slider__fullpic
       thumbs(
         :works="reverseWorks"
         :currentWork="currentWork"
@@ -28,7 +30,8 @@ script(type="text/template")#preview-thumbs
       :class="{active: currentWork.id === slide.id}"
       )
       button.works-slider__thumb-link
-        img(:src="slide.photo").works-slider__thumb
+        .works-slider__thumb-img
+          img(:src="slide.photo").works-slider__thumb
 
 script(type="text/template")#preview-btns
   .works-slider__buttons

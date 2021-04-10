@@ -16,7 +16,7 @@ new Vue({
       flickityOptions: {
         prevNextButtons: false,
         pageDots: false,
-        groupCell: 2
+        groupCells: true
       }
     };
   },

@@ -1,32 +1,13 @@
 .values {
   color: #222427;
+  position: relative;
 }
 
 .values__container {
   position: relative;
   padding: 130px 0;
-  &:before {
-    content: "";
-    position: absolute;
-    background: url('~images/content/bg/guitar.png') left bottom no-repeat;
-    display: block;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    left: -11%;
-  }
-  @include tablets {
-    &:before {
-      content: "";
-      position: absolute;
-      background: url('~images/content/bg/gitare2.png') left bottom / contain no-repeat;
-      display: block;
-      top: 95%;
-      height: 36%;
-      width: 90%;
-      transform: translate(-50%, -50%);
-      left: 50%;
-    }
+  @include desktop {
+    padding: 20px 0;
   }
 }
 
@@ -51,4 +32,33 @@
   opacity: 0.5;
   font-weight: 600;
   line-height: 1.8;
+}
+.values__image {
+  position: absolute;
+  width: 633px;
+  bottom: 60px;
+  @media screen and (max-width: 1625px) {
+    left: -100px;
+  }
+  @media screen and (max-width: 1365px) {
+    left: -200px;
+  }
+  @include desktop {
+    width: 436px;
+    left: -110px;
+  }
+  @media screen and (max-width: 965px) {
+    left: -170px;
+  }
+  @media screen and (max-width: 880px) {
+    display: none;
+  }
+}
+.values__image-bottom {
+  display: none;
+  @media screen and (max-width: 880px) {
+    display: block;
+    width: 688px;
+    margin: -70px auto 37px;
+  }
 }
